@@ -18,7 +18,7 @@ class LookupForm extends Component {
     this.doDotDotDot = this.doDotDotDot.bind(this)
   }
 
-  onSubmit(event) {
+  async onSubmit(event) {
     event.preventDefault()
     const username = document.getElementById('name').value
 
@@ -32,23 +32,23 @@ class LookupForm extends Component {
     this.setState({ submitting: true })
     this.doDotDotDot()
 
-    fetch(`${apiUrl}?giver=${username}`)
-      .then(response => response.json())
-      .then(data => {
-        this.props.setMessage(`${data.message}!`)
-        document.getElementById('name').value = ''
-      })
-      .catch(error => this.props.setMessage('Ruh-roh! An error occured! Contact the mods?'))
     
+    try {
+      const response = await fetch(`${apiUrl}?giver=${username}`)
+      const data = await response.json()
+      this.props.setMessage(data.message)
+    } catch(error) {
+      this.props.setMessage('Ruh-roh! An error occured! Contact the mods?')
+    }
     this.setState({ submitting: false })
   }
 
   doDotDotDot() {
     this.setState((curState) => {
       let newLength = curState.dotdotdot.length % 3
+      if (curState.submitting) setTimeout(this.doDotDotDot, 100)
       return { dotdotdot: '.'.repeat(newLength + 1) }
     })
-    setTimeout(this.doDotDotDot, 500)
   }
 
   render() {
