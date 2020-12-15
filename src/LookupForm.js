@@ -1,7 +1,7 @@
 import './LookupForm.css'
 import React, { Component } from 'react'
 
-const apiUrl = 'http://pen-swap-secret-santa.us-e2.cloudhub.io/secretsanta'
+const apiUrl = 'https://pen-swap-secret-santa.us-e2.cloudhub.io/secretsanta'
 
 class LookupForm extends Component {
   constructor(props) {
