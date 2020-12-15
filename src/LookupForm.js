@@ -1,6 +1,5 @@
 import './LookupForm.css'
 import React, { Component } from 'react'
-import { render } from '@testing-library/react'
 
 const apiUrl = 'http://pen-swap-secret-santa.us-e2.cloudhub.io/secretsanta'
 

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import santa from './santa.svg'
 import './Santa.css'
 
