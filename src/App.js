@@ -10,8 +10,10 @@ function App() {
   )
   return (
     <div className='App'>
-      <Santa message={message} />
-      <LookupForm setMessage={setMessage} />
+      <div className='App-container'>
+        <Santa message={message} />
+        <LookupForm setMessage={setMessage} />
+      </div>
       <Footer />
     </div>
   )

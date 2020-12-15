@@ -1,10 +1,12 @@
+.LookupForm {
+  margin-top: 4rem;
+}
+
 .LookupForm-form {
   display: flex;
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5vh;
-  margin-bottom: 0.5rem;
   border-radius: 0.8rem;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05);
 }
