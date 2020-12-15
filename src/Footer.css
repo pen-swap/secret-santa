@@ -1,6 +1,6 @@
 .Footer {
   font-size: 13px;
-  position: absolute;
+  position: fixed;
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);

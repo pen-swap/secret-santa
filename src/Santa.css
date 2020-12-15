@@ -1,17 +1,21 @@
 .Santa {
-  display: relative;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 5vh;
   margin-top: 5vh;
 }
+
 .Santa-img {
   width: 10vw;
+  min-width: 150px;
   height: auto;
+  align-self: center;
+  display: flex;
 }
 
 .Santa-speechbubble {
   margin-top: 15px;
   position: relative;
-  width: 30em;
   max-width: 30em;
   background-color: #fff;
   padding: 1.125em 1.5em;
@@ -20,6 +24,7 @@
     0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
   margin-left: auto;
   margin-right: auto;
+  word-wrap: break-word;
 }
 
 .Santa-speechbubble.new-message {
