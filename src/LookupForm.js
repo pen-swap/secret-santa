@@ -20,7 +20,6 @@ class LookupForm extends Component {
   async onSubmit(event) {
     event.preventDefault()
     const username = document.getElementById('name').value
-
     if (username === undefined || username === null || username.trim() === '') {
       this.props.setMessage(
         'Hey now! You need to type in your reddit username!'
@@ -36,6 +35,7 @@ class LookupForm extends Component {
       const response = await fetch(`${apiUrl}?giver=${username}`)
       const data = await response.json()
       this.props.setMessage(data.message)
+      document.getElementById('name').value = ''
     } catch(error) {
       this.props.setMessage('Ruh-roh! An error occured! Contact the mods?')
     }
